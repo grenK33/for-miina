@@ -267,7 +267,7 @@ document.getElementById('page-timeline').addEventListener('click', (e) => {
     if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
       const imgH = 240;
       const img = document.createElement('img');
-      img.src = 'images/IMG_9927.PNG';
+      img.src = 'images/IMG_9927.png';
       img.id = 'rocoEgg';
       img.style.cssText = `
         position:fixed;
@@ -756,8 +756,8 @@ let noGoingBackCount = 0;
 btnPrev.addEventListener('click', () => {
   if (current === 0) {
     noGoingBackCount++;
-    if (noGoingBackCount === 1) showNoGoingBack('images/IMG_9922.PNG', "there's no going back now 🙂", 420, '38%');
-    else showNoGoingBack('images/IMG_9924.PNG', 'I said no.', 580, '22%');
+    if (noGoingBackCount === 1) showNoGoingBack('images/IMG_9922.png', "there's no going back now 🙂", 420, '38%');
+    else showNoGoingBack('images/IMG_9924.png', 'I said no.', 580, '22%');
     return;
   }
   goTo(current - 1);
@@ -786,7 +786,7 @@ let W, H, stars = [], photoStars = [], rafId;
 
 const starPhotos = [
   { file: 'images/IMG_2726.jpg',  caption: 'Two lovebirds enjoying Haapsalu Spa. Thanks for the gift bae, felt like a princess.' },
-  { file: 'images/IMG_2731.JPG',  caption: 'This duck trynna take spotlight off you, such low level genjutsu dont work on me..' },
+  { file: 'images/IMG_2731.jpg',  caption: 'This duck trynna take spotlight off you, such low level genjutsu dont work on me..' },
   { file: 'images/IMG_2742.jpg',  caption: 'Yeah... Just close this.' },
   { file: 'images/IMG_4252.jpg',  caption: 'You got me doing this twice at this point..' },
   { file: 'images/IMG_7721.jpg',  caption: 'Shoutout to the random person taking pictures of us!' },
@@ -1810,7 +1810,7 @@ document.getElementById('page-love').addEventListener('click', (e) => {
   // Easter egg: crafting photo (index 1 = IMG_8598) shows IMG_9928 — only when clicking the photo itself
   if (cinState === 'photo' && cinIdx === 1 && !document.getElementById('craftingEgg') && e.target.id === 'cinPhoto') {
     const img = document.createElement('img');
-    img.src = 'images/IMG_9928.PNG';
+    img.src = 'images/IMG_9928.png';
     img.id = 'craftingEgg';
     img.style.cssText = `
       position:fixed;
