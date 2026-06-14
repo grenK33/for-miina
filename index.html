@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Miina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&family=Caveat:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PAGE INDICATOR -->
+  <div id="pageIndicator"></div>
+
+  <!-- NAV ARROWS -->
+  <button id="btnPrev" aria-label="Previous"><span></span></button>
+  <button id="btnNext" aria-label="Next"><span></span></button>
+
+  <!-- PAGES -->
+  <div id="pages">
+
+    <!-- PAGE 1: HERO -->
+    <div class="page" id="page-hero">
+      <div class="hero-bg" style="background-image: url('images/IMG_9510.jpg')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-sub">a little something for</p>
+        <h1 class="hero-name" id="heroName">Miina</h1>
+        <p class="hero-tagline">The most joyful bundle of sunshine on this planet.</p>
+        <p class="hero-date">Gren &amp; Miina &nbsp;·&nbsp; 15.06.2026</p>
+      </div>
+    </div>
+
+    <!-- PAGE 2: TIMELINE -->
+    <div class="page" id="page-timeline">
+      <svg class="map-svg-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="finegrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(100,72,38,0.1)" stroke-width="0.4"/>
+          </pattern>
+          <pattern id="coarsegrid" width="120" height="120" patternUnits="userSpaceOnUse">
+            <path d="M 120 0 L 0 0 0 120" fill="none" stroke="rgba(100,72,38,0.2)" stroke-width="0.8"/>
+          </pattern>
+          <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="100%" stop-color="rgba(60,35,10,0.25)"/>
+          </radialGradient>
+        </defs>
+        <rect width="1600" height="900" fill="#dfd0ae"/>
+        <rect width="1600" height="900" fill="url(#finegrid)"/>
+        <rect width="1600" height="900" fill="url(#coarsegrid)"/>
+
+        <!-- landmasses — subtle cartographic shapes -->
+        <g fill="rgba(155,112,50,0.18)" stroke="rgba(100,62,18,0.28)" stroke-width="0.8" stroke-linejoin="round">
+
+          <!-- main northern landmass (top-left continent edge) -->
+          <path d="M -10,60 C 60,40 130,80 200,65 C 260,52 310,90 370,75 C 430,60 460,100 520,88
+                   C 575,76 600,110 650,95 C 700,80 720,50 780,55 C 840,60 860,30 920,20
+                   C 970,10 1010,45 1060,35 C 1110,25 1140,-5 1200,5
+                   C 1250,15 1280,50 1340,40 C 1390,30 1420,-10 1480,0
+                   C 1530,8 1580,30 1620,20
+                   L 1620,-10 L -10,-10 Z"/>
+
+          <!-- southern landmass (bottom edge) -->
+          <path d="M -10,820 C 80,800 150,840 230,825 C 310,810 360,850 440,835
+                   C 510,822 550,860 630,845 C 700,832 730,870 800,858
+                   C 870,846 900,880 970,868 C 1040,856 1070,830 1140,840
+                   C 1210,850 1240,890 1310,878 C 1380,866 1410,840 1480,850
+                   C 1540,858 1580,900 1620,890
+                   L 1620,920 L -10,920 Z"/>
+
+          <!-- large elongated island left-mid — like a stretched archipelago -->
+          <path d="M 55,318 C 80,295 125,285 168,290 C 200,294 222,280 248,295
+                   C 265,305 258,328 244,342 C 232,355 245,378 228,392
+                   C 210,406 178,408 152,396 C 128,384 98,390 78,370
+                   C 58,350 34,338 55,318 Z"/>
+
+          <!-- top-right archipelago — elongated horizontal chain -->
+          <path d="M 1255,108 C 1278,88 1320,82 1355,96 C 1385,108 1400,138 1388,165
+                   C 1376,188 1348,196 1318,190 C 1292,185 1268,168 1258,145
+                   C 1248,122 1236,126 1255,108 Z"/>
+          <path d="M 1382,68 C 1402,52 1435,56 1450,76 C 1466,98 1458,128 1436,138
+                   C 1416,148 1388,136 1378,114 C 1369,95 1364,82 1382,68 Z"/>
+          <path d="M 1468,130 C 1485,110 1520,112 1534,135 C 1548,158 1536,188 1512,194
+                   C 1490,200 1464,184 1460,160 C 1456,140 1454,148 1468,130 Z"/>
+
+          <!-- mid-left elongated island — horizontal, like a long narrow landmass -->
+          <path d="M 132,552 C 158,530 205,524 252,538 C 285,548 308,538 332,554
+                   C 355,570 350,600 326,615 C 305,628 272,624 245,630
+                   C 215,636 182,628 162,610 C 140,590 110,572 132,552 Z"/>
+
+          <!-- scattered islands — varied sizes and elongated shapes -->
+          <path d="M 465,185 C 480,168 512,165 530,182 C 548,200 544,228 524,238
+                   C 505,248 478,238 468,218 C 458,200 452,200 465,185 Z"/>
+          <path d="M 1068,668 C 1085,648 1122,645 1142,663 C 1162,682 1156,715 1132,724
+                   C 1108,734 1078,720 1068,698 C 1059,678 1052,686 1068,668 Z"/>
+          <path d="M 320,708 C 338,688 375,685 395,704 C 415,724 410,758 386,766
+                   C 362,774 330,758 320,736 C 311,715 304,726 320,708 Z"/>
+          <path d="M 880,745 C 900,725 940,724 958,744 C 975,762 968,792 945,800
+                   C 922,808 892,793 882,770 C 873,750 862,763 880,745 Z"/>
+        </g>
+
+        <!-- depth lines on landmasses (hachure feel) -->
+        <g fill="none" stroke="rgba(110,70,25,0.12)" stroke-width="0.7">
+          <path d="M 85,330 C 112,308 160,302 188,318"/>
+          <path d="M 92,348 C 122,324 168,318 194,336"/>
+          <path d="M 168,570 C 190,552 222,554 238,570"/>
+          <path d="M 1290,130 C 1310,112 1345,110 1362,128"/>
+        </g>
+
+        <line x1="800" y1="0" x2="800" y2="900" stroke="rgba(80,55,20,0.1)" stroke-width="1"/>
+        <line x1="0" y1="450" x2="1600" y2="450" stroke="rgba(80,55,20,0.1)" stroke-width="1"/>
+        <rect x="18" y="18" width="1564" height="864" fill="none" stroke="rgba(100,72,38,0.3)" stroke-width="1" rx="1"/>
+
+        <!-- compass -->
+        <g transform="translate(60,60)">
+          <circle cx="0" cy="0" r="28" fill="none" stroke="rgba(100,72,38,0.25)" stroke-width="0.7"/>
+          <circle cx="0" cy="0" r="4" fill="rgba(100,72,38,0.2)"/>
+          <polygon points="0,-24 3,-6 0,-10 -3,-6" fill="rgba(130,60,30,0.6)"/>
+          <polygon points="0,24 3,6 0,10 -3,6" fill="rgba(100,72,38,0.3)"/>
+          <polygon points="24,0 6,3 10,0 6,-3" fill="rgba(100,72,38,0.25)"/>
+          <polygon points="-24,0 -6,3 -10,0 -6,-3" fill="rgba(100,72,38,0.25)"/>
+          <text x="0" y="-32" text-anchor="middle" font-family="serif" font-size="9" fill="rgba(100,72,38,0.6)">N</text>
+        </g>
+
+        <rect width="1600" height="900" fill="url(#vignette)"/>
+      </svg>
+
+      <!-- trail SVG overlay -->
+      <svg id="trailSvg" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;"></svg>
+
+      <!-- memory stops injected by JS -->
+      <div id="memoryStops" style="position:absolute;inset:0;z-index:4;pointer-events:none;"></div>
+
+      <!-- journey moment overlay -->
+      <div id="journeyMoment" class="hidden">
+        <div class="journey-moment-inner">
+          <div id="journeyMomentMedia"></div>
+          <div class="journey-moment-meta">
+            <div class="journey-moment-date" id="journeyMomentDate"></div>
+            <div class="journey-moment-title" id="journeyMomentTitle"></div>
+            <div class="journey-moment-desc" id="journeyMomentDesc"></div>
+            <div class="journey-moment-hint">click anywhere to continue</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- title cartouche (fixed to viewport) -->
+      <div class="map-cartouche">
+        <p class="map-eyebrow">our journey</p>
+        <h2>Our Journey</h2>
+      </div>
+
+    </div>
+
+    <!-- PAGE 4: STARGAZING -->
+    <div class="page" id="page-stars">
+      <canvas id="starCanvas"></canvas>
+      <div class="stars-content">
+        <h2 class="light">Our Night Sky</h2>
+        <p class="stars-hint">we're up here somewhere</p>
+      </div>
+      <div id="photoModal" class="photo-modal hidden">
+        <div class="photo-modal-inner">
+          <p id="modalCaption"></p>
+          <img id="modalImg" src="" alt="" />
+          <button id="modalClose">close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 5: MUSEUM -->
+    <div class="page" id="page-museum">
+      <!-- Corridor background -->
+      <svg class="museum-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <!-- Deep forest green gallery walls -->
+          <linearGradient id="mMarbleL" x1="1" y1="0.5" x2="0" y2="0.5">
+            <stop offset="0%" stop-color="#1e3022"/>
+            <stop offset="100%" stop-color="#0d1810"/>
+          </linearGradient>
+          <linearGradient id="mMarbleR" x1="0" y1="0.5" x2="1" y2="0.5">
+            <stop offset="0%" stop-color="#1e3022"/>
+            <stop offset="100%" stop-color="#0d1810"/>
+          </linearGradient>
+          <!-- Near-black ceiling -->
+          <linearGradient id="mCeiling" x1="0.5" y1="0" x2="0.5" y2="1">
+            <stop offset="0%" stop-color="#060908"/>
+            <stop offset="100%" stop-color="#111c13"/>
+          </linearGradient>
+          <!-- Dark hardwood floor -->
+          <linearGradient id="mFloor" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a1c0c"/>
+            <stop offset="50%" stop-color="#160f06"/>
+            <stop offset="100%" stop-color="#060402"/>
+          </linearGradient>
+          <!-- Left spotlight glow (centered on frame position) -->
+          <radialGradient id="spotL" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="rgba(255,218,110,0.40)"/>
+            <stop offset="42%"  stop-color="rgba(255,205,80,0.13)"/>
+            <stop offset="100%" stop-color="rgba(255,195,60,0)"/>
+          </radialGradient>
+          <!-- Right spotlight glow -->
+          <radialGradient id="spotR" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="rgba(255,218,110,0.40)"/>
+            <stop offset="42%"  stop-color="rgba(255,205,80,0.13)"/>
+            <stop offset="100%" stop-color="rgba(255,195,60,0)"/>
+          </radialGradient>
+          <!-- Beam cone (ceiling to frame) -->
+          <linearGradient id="beamL" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="rgba(255,220,120,0.16)"/>
+            <stop offset="100%" stop-color="rgba(255,220,120,0)"/>
+          </linearGradient>
+          <linearGradient id="beamR" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="rgba(255,220,120,0.16)"/>
+            <stop offset="100%" stop-color="rgba(255,220,120,0)"/>
+          </linearGradient>
+          <!-- Floor warm reflection pools -->
+          <radialGradient id="floorGlowL" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="rgba(255,200,80,0.12)"/>
+            <stop offset="100%" stop-color="rgba(255,200,80,0)"/>
+          </radialGradient>
+          <radialGradient id="floorGlowR" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="rgba(255,200,80,0.12)"/>
+            <stop offset="100%" stop-color="rgba(255,200,80,0)"/>
+          </radialGradient>
+          <!-- Depth haze -->
+          <radialGradient id="mDepth" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="rgba(18,32,20,0.55)"/>
+            <stop offset="100%" stop-color="rgba(18,32,20,0)"/>
+          </radialGradient>
+          <!-- Red carpet runner -->
+          <linearGradient id="carpetGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#280505"/>
+            <stop offset="100%" stop-color="#6e1212"/>
+          </linearGradient>
+          <!-- Edge vignette -->
+          <radialGradient id="mVignette" cx="50%" cy="50%" r="70%">
+            <stop offset="40%" stop-color="rgba(0,0,0,0)"/>
+            <stop offset="100%" stop-color="rgba(4,3,2,0.92)"/>
+          </radialGradient>
+        </defs>
+
+        <!-- ── CEILING ── -->
+        <polygon points="0,0 1440,0 720,362" fill="url(#mCeiling)"/>
+        <!-- Faint crown line -->
+        <path d="M 0,0 Q 720,14 1440,0" fill="none" stroke="rgba(130,105,65,0.3)" stroke-width="1.8"/>
+
+        <!-- ── LEFT WALL ── -->
+        <polygon points="0,0 0,900 720,362" fill="url(#mMarbleL)"/>
+        <!-- Subtle texture -->
+        <g opacity="0.10" stroke="#2d4a30" stroke-width="1.2" fill="none">
+          <path d="M 0,140 Q 110,330 168,550 Q 210,700 105,900"/>
+          <path d="M 105,0 Q 225,240 255,468 Q 275,645 165,900"/>
+        </g>
+        <!-- Crown molding: shadow band below gold trim, then gold highlight -->
+        <polygon points="0,0 720,362 0,8" fill="rgba(5,10,6,0.55)"/>
+        <line x1="0" y1="0" x2="720" y2="362" stroke="rgba(145,118,75,0.55)" stroke-width="3"/>
+        <line x1="0" y1="0" x2="720" y2="362" stroke="rgba(200,165,90,0.35)" stroke-width="1"/>
+        <!-- Dado rail molding: filled body + highlight + shadow (VP=720,362) -->
+        <!-- dado top at left edge y=550, bottom y=568 -->
+        <polygon points="0,550 720,362 0,568" fill="#132215" opacity="0.95"/>
+        <line x1="0" y1="550" x2="720" y2="362" stroke="rgba(90,148,95,0.6)" stroke-width="1.6"/>
+        <line x1="0" y1="568" x2="720" y2="362" stroke="rgba(4,8,5,0.85)" stroke-width="1.4"/>
+        <!-- Baseboard: narrow dark band at floor edge -->
+        <polygon points="0,890 720,362 0,900" fill="rgba(4,8,5,0.7)"/>
+        <line x1="0" y1="890" x2="720" y2="362" stroke="rgba(60,100,65,0.3)" stroke-width="1"/>
+        <!-- Wall/floor trim -->
+        <line x1="0" y1="900" x2="720" y2="362" stroke="rgba(8,14,9,0.9)" stroke-width="2.5"/>
+        <!-- Spotlight beam cone from ceiling -->
+        <polygon points="288,0 128,470 448,470" fill="url(#beamL)" opacity="0.75"/>
+        <!-- Warm glow pool at frame position -->
+        <ellipse cx="288" cy="295" rx="260" ry="290" fill="url(#spotL)"/>
+        <!-- Floor reflection pool -->
+        <ellipse cx="288" cy="690" rx="185" ry="115" fill="url(#floorGlowL)"/>
+
+        <!-- ── RIGHT WALL ── -->
+        <polygon points="1440,0 1440,900 720,362" fill="url(#mMarbleR)"/>
+        <g opacity="0.10" stroke="#2d4a30" stroke-width="1.2" fill="none">
+          <path d="M 1440,140 Q 1330,330 1272,550 Q 1230,700 1335,900"/>
+          <path d="M 1335,0 Q 1215,240 1185,468 Q 1165,645 1275,900"/>
+        </g>
+        <!-- Crown molding right -->
+        <polygon points="1440,0 720,362 1440,8" fill="rgba(5,10,6,0.55)"/>
+        <line x1="1440" y1="0" x2="720" y2="362" stroke="rgba(145,118,75,0.55)" stroke-width="3"/>
+        <line x1="1440" y1="0" x2="720" y2="362" stroke="rgba(200,165,90,0.35)" stroke-width="1"/>
+        <!-- Dado rail right -->
+        <polygon points="1440,550 720,362 1440,568" fill="#132215" opacity="0.95"/>
+        <line x1="1440" y1="550" x2="720" y2="362" stroke="rgba(90,148,95,0.6)" stroke-width="1.6"/>
+        <line x1="1440" y1="568" x2="720" y2="362" stroke="rgba(4,8,5,0.85)" stroke-width="1.4"/>
+        <!-- Baseboard right -->
+        <polygon points="1440,890 720,362 1440,900" fill="rgba(4,8,5,0.7)"/>
+        <line x1="1440" y1="890" x2="720" y2="362" stroke="rgba(60,100,65,0.3)" stroke-width="1"/>
+        <!-- Wall/floor trim right -->
+        <line x1="1440" y1="900" x2="720" y2="362" stroke="rgba(8,14,9,0.9)" stroke-width="2.5"/>
+        <polygon points="1152,0 992,470 1312,470" fill="url(#beamR)" opacity="0.75"/>
+        <ellipse cx="1152" cy="295" rx="260" ry="290" fill="url(#spotR)"/>
+        <ellipse cx="1152" cy="690" rx="185" ry="115" fill="url(#floorGlowR)"/>
+
+        <!-- ── FLOOR (dark hardwood parquet) ── -->
+        <polygon points="0,900 1440,900 720,362" fill="url(#mFloor)"/>
+        <g stroke="rgba(0,0,0,0.5)" stroke-width="0.8">
+          <line x1="720" y1="362" x2="0"    y2="900"/>
+          <line x1="720" y1="362" x2="145"  y2="900"/>
+          <line x1="720" y1="362" x2="290"  y2="900"/>
+          <line x1="720" y1="362" x2="435"  y2="900"/>
+          <line x1="720" y1="362" x2="575"  y2="900"/>
+          <line x1="720" y1="362" x2="648"  y2="900"/>
+          <line x1="720" y1="362" x2="692"  y2="900"/>
+          <line x1="720" y1="362" x2="748"  y2="900"/>
+          <line x1="720" y1="362" x2="792"  y2="900"/>
+          <line x1="720" y1="362" x2="865"  y2="900"/>
+          <line x1="720" y1="362" x2="1005" y2="900"/>
+          <line x1="720" y1="362" x2="1150" y2="900"/>
+          <line x1="720" y1="362" x2="1295" y2="900"/>
+          <line x1="720" y1="362" x2="1440" y2="900"/>
+        </g>
+        <g stroke="rgba(0,0,0,0.30)" stroke-width="0.6">
+          <line x1="0"   y1="900" x2="1440" y2="900"/>
+          <line x1="42"  y1="838" x2="1398" y2="838"/>
+          <line x1="120" y1="772" x2="1320" y2="772"/>
+          <line x1="220" y1="704" x2="1220" y2="704"/>
+          <line x1="318" y1="643" x2="1122" y2="643"/>
+          <line x1="402" y1="589" x2="1038" y2="589"/>
+          <line x1="472" y1="542" x2="968"  y2="542"/>
+          <line x1="530" y1="502" x2="910"  y2="502"/>
+          <line x1="580" y1="466" x2="860"  y2="466"/>
+          <line x1="622" y1="435" x2="818"  y2="435"/>
+          <line x1="658" y1="408" x2="782"  y2="408"/>
+        </g>
+
+        <!-- ── RED CARPET RUNNER ── -->
+        <!-- Trapezoid narrowing to vanishing point, ~35% of floor width -->
+        <polygon points="468,900 972,900 720,362" fill="url(#carpetGrad)"/>
+        <!-- Subtle gold trim on carpet edges -->
+        <line x1="720" y1="362" x2="468" y2="900" stroke="rgba(175,138,55,0.45)" stroke-width="2"/>
+        <line x1="720" y1="362" x2="972" y2="900" stroke="rgba(175,138,55,0.45)" stroke-width="2"/>
+        <!-- Inner border lines -->
+        <line x1="720" y1="362" x2="500" y2="900" stroke="rgba(175,138,55,0.18)" stroke-width="1"/>
+        <line x1="720" y1="362" x2="940" y2="900" stroke="rgba(175,138,55,0.18)" stroke-width="1"/>
+
+        <!-- ── ATMOSPHERE ── -->
+        <!-- Depth haze -->
+        <ellipse cx="720" cy="355" rx="110" ry="78" fill="url(#mDepth)"/>
+        <!-- Edge vignette -->
+        <rect width="1440" height="900" fill="url(#mVignette)"/>
+      </svg>
+
+      <!-- Spotlights (injected by JS) -->
+      <div id="museumSpots" style="position:absolute;inset:0;pointer-events:none;z-index:2;"></div>
+      <!-- Frames (injected by JS) -->
+      <div id="museumFrames" style="position:absolute;inset:0;pointer-events:none;z-index:3;"></div>
+
+      <!-- UI -->
+      <div class="museum-ui">
+        <div class="museum-title-block">
+          <p class="museum-eyebrow">the collection</p>
+          <h2 class="museum-heading">The Museum</h2>
+        </div>
+        <p class="museum-hint" id="museumHint">click anywhere to begin</p>
+      </div>
+    </div>
+
+    <!-- PAGE 6: CINEMA -->
+    <div class="page" id="page-love">
+      <!-- Cinema interior SVG background -->
+      <svg class="cinema-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Ceiling gradient -->
+          <linearGradient id="ceilGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0a0806"/>
+            <stop offset="100%" stop-color="#1a120a"/>
+          </linearGradient>
+          <!-- Side wall gradient -->
+          <linearGradient id="wallGradL" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#0d0b09"/>
+            <stop offset="100%" stop-color="#1e1710"/>
+          </linearGradient>
+          <linearGradient id="wallGradR" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1e1710"/>
+            <stop offset="100%" stop-color="#0d0b09"/>
+          </linearGradient>
+          <!-- Floor gradient -->
+          <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#100d08"/>
+            <stop offset="100%" stop-color="#060402"/>
+          </linearGradient>
+          <!-- Screen glow -->
+          <radialGradient id="screenGlow" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#e8dfc8" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#e8dfc8" stop-opacity="0"/>
+          </radialGradient>
+          <!-- Projector beam -->
+          <linearGradient id="projBeam" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffe8a0" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#ffe8a0" stop-opacity="0.04"/>
+          </linearGradient>
+          <!-- Seat row gradient -->
+          <linearGradient id="seatGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a1008"/>
+            <stop offset="100%" stop-color="#0a0604"/>
+          </linearGradient>
+          <!-- Aisle floor light strips -->
+          <linearGradient id="aisleGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6b3c14" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#3a1e08" stop-opacity="0.2"/>
+          </linearGradient>
+          <!-- Vignette -->
+          <radialGradient id="cinVig" cx="50%" cy="50%" r="75%">
+            <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0.88"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Ceiling -->
+        <rect x="0" y="0" width="1440" height="260" fill="url(#ceilGrad)"/>
+        <!-- Decorative crown molding line -->
+        <line x1="0" y1="258" x2="1440" y2="258" stroke="rgba(180,140,70,0.15)" stroke-width="1"/>
+
+        <!-- Side walls -->
+        <rect x="0" y="0" width="200" height="900" fill="url(#wallGradL)"/>
+        <rect x="1240" y="0" width="200" height="900" fill="url(#wallGradR)"/>
+
+        <!-- Wall sconces — left -->
+        <ellipse cx="60" cy="320" rx="18" ry="8" fill="rgba(200,140,50,0.12)"/>
+        <rect x="52" y="318" width="16" height="28" rx="2" fill="#1a1208"/>
+        <ellipse cx="60" cy="316" rx="10" ry="4" fill="rgba(255,200,80,0.18)"/>
+        <ellipse cx="60" cy="500" rx="18" ry="8" fill="rgba(200,140,50,0.12)"/>
+        <rect x="52" y="498" width="16" height="28" rx="2" fill="#1a1208"/>
+        <ellipse cx="60" cy="496" rx="10" ry="4" fill="rgba(255,200,80,0.18)"/>
+        <!-- Wall sconces — right -->
+        <ellipse cx="1380" cy="320" rx="18" ry="8" fill="rgba(200,140,50,0.12)"/>
+        <rect x="1372" y="318" width="16" height="28" rx="2" fill="#1a1208"/>
+        <ellipse cx="1380" cy="316" rx="10" ry="4" fill="rgba(255,200,80,0.18)"/>
+        <ellipse cx="1380" cy="500" rx="18" ry="8" fill="rgba(200,140,50,0.12)"/>
+        <rect x="1372" y="498" width="16" height="28" rx="2" fill="#1a1208"/>
+        <ellipse cx="1380" cy="496" rx="10" ry="4" fill="rgba(255,200,80,0.18)"/>
+
+        <!-- Floor -->
+        <rect x="0" y="580" width="1440" height="320" fill="url(#floorGrad)"/>
+
+        <!-- Aisle light strips -->
+        <rect x="530" y="580" width="8" height="320" fill="url(#aisleGrad)"/>
+        <rect x="902" y="580" width="8" height="320" fill="url(#aisleGrad)"/>
+
+        <!-- Seat rows (silhouettes) — row 1 (farthest, smallest) -->
+        <rect x="160" y="490" width="1120" height="82" rx="4" fill="url(#seatGrad)"/>
+        <!-- Seat bumps row 1 -->
+        <g fill="#0e0a06" opacity="0.9">
+          <rect x="180" y="476" width="28" height="18" rx="6"/>
+          <rect x="218" y="476" width="28" height="18" rx="6"/>
+          <rect x="256" y="476" width="28" height="18" rx="6"/>
+          <rect x="294" y="476" width="28" height="18" rx="6"/>
+          <rect x="332" y="476" width="28" height="18" rx="6"/>
+          <rect x="370" y="476" width="28" height="18" rx="6"/>
+          <rect x="408" y="476" width="28" height="18" rx="6"/>
+          <rect x="446" y="476" width="28" height="18" rx="6"/>
+          <rect x="484" y="476" width="28" height="18" rx="6"/>
+          <!-- aisle gap -->
+          <rect x="548" y="476" width="28" height="18" rx="6"/>
+          <rect x="586" y="476" width="28" height="18" rx="6"/>
+          <rect x="624" y="476" width="28" height="18" rx="6"/>
+          <rect x="662" y="476" width="28" height="18" rx="6"/>
+          <rect x="700" y="476" width="28" height="18" rx="6"/>
+          <rect x="738" y="476" width="28" height="18" rx="6"/>
+          <rect x="776" y="476" width="28" height="18" rx="6"/>
+          <rect x="814" y="476" width="28" height="18" rx="6"/>
+          <rect x="852" y="476" width="28" height="18" rx="6"/>
+          <!-- aisle gap -->
+          <rect x="916" y="476" width="28" height="18" rx="6"/>
+          <rect x="954" y="476" width="28" height="18" rx="6"/>
+          <rect x="992" y="476" width="28" height="18" rx="6"/>
+          <rect x="1030" y="476" width="28" height="18" rx="6"/>
+          <rect x="1068" y="476" width="28" height="18" rx="6"/>
+          <rect x="1106" y="476" width="28" height="18" rx="6"/>
+          <rect x="1144" y="476" width="28" height="18" rx="6"/>
+          <rect x="1182" y="476" width="28" height="18" rx="6"/>
+          <rect x="1220" y="476" width="28" height="18" rx="6"/>
+        </g>
+
+        <!-- Seat rows — row 2 (middle) -->
+        <rect x="100" y="572" width="1240" height="100" rx="4" fill="#0d0a06"/>
+        <g fill="#0a0806" opacity="0.95">
+          <rect x="120" y="555" width="36" height="22" rx="7"/>
+          <rect x="166" y="555" width="36" height="22" rx="7"/>
+          <rect x="212" y="555" width="36" height="22" rx="7"/>
+          <rect x="258" y="555" width="36" height="22" rx="7"/>
+          <rect x="304" y="555" width="36" height="22" rx="7"/>
+          <rect x="350" y="555" width="36" height="22" rx="7"/>
+          <rect x="396" y="555" width="36" height="22" rx="7"/>
+          <rect x="442" y="555" width="36" height="22" rx="7"/>
+          <rect x="488" y="555" width="36" height="22" rx="7"/>
+          <rect x="560" y="555" width="36" height="22" rx="7"/>
+          <rect x="606" y="555" width="36" height="22" rx="7"/>
+          <rect x="652" y="555" width="36" height="22" rx="7"/>
+          <rect x="698" y="555" width="36" height="22" rx="7"/>
+          <rect x="744" y="555" width="36" height="22" rx="7"/>
+          <rect x="790" y="555" width="36" height="22" rx="7"/>
+          <rect x="836" y="555" width="36" height="22" rx="7"/>
+          <rect x="916" y="555" width="36" height="22" rx="7"/>
+          <rect x="962" y="555" width="36" height="22" rx="7"/>
+          <rect x="1008" y="555" width="36" height="22" rx="7"/>
+          <rect x="1054" y="555" width="36" height="22" rx="7"/>
+          <rect x="1100" y="555" width="36" height="22" rx="7"/>
+          <rect x="1146" y="555" width="36" height="22" rx="7"/>
+          <rect x="1192" y="555" width="36" height="22" rx="7"/>
+          <rect x="1238" y="555" width="36" height="22" rx="7"/>
+          <rect x="1284" y="555" width="36" height="22" rx="7"/>
+        </g>
+
+        <!-- Seat rows — row 3 (foreground, tallest) -->
+        <rect x="0" y="660" width="1440" height="240" rx="0" fill="#090704"/>
+        <g fill="#070503" opacity="1">
+          <rect x="10" y="638" width="48" height="30" rx="9"/>
+          <rect x="70" y="638" width="48" height="30" rx="9"/>
+          <rect x="130" y="638" width="48" height="30" rx="9"/>
+          <rect x="190" y="638" width="48" height="30" rx="9"/>
+          <rect x="250" y="638" width="48" height="30" rx="9"/>
+          <rect x="310" y="638" width="48" height="30" rx="9"/>
+          <rect x="370" y="638" width="48" height="30" rx="9"/>
+          <rect x="430" y="638" width="48" height="30" rx="9"/>
+          <rect x="490" y="638" width="48" height="30" rx="9"/>
+          <rect x="570" y="638" width="48" height="30" rx="9"/>
+          <rect x="630" y="638" width="48" height="30" rx="9"/>
+          <rect x="690" y="638" width="48" height="30" rx="9"/>
+          <rect x="750" y="638" width="48" height="30" rx="9"/>
+          <rect x="810" y="638" width="48" height="30" rx="9"/>
+          <rect x="870" y="638" width="48" height="30" rx="9"/>
+          <rect x="950" y="638" width="48" height="30" rx="9"/>
+          <rect x="1010" y="638" width="48" height="30" rx="9"/>
+          <rect x="1070" y="638" width="48" height="30" rx="9"/>
+          <rect x="1130" y="638" width="48" height="30" rx="9"/>
+          <rect x="1190" y="638" width="48" height="30" rx="9"/>
+          <rect x="1250" y="638" width="48" height="30" rx="9"/>
+          <rect x="1310" y="638" width="48" height="30" rx="9"/>
+          <rect x="1370" y="638" width="48" height="30" rx="9"/>
+        </g>
+
+        <!-- Projector beam from top-center -->
+        <polygon points="720,0 580,420 860,420" fill="url(#projBeam)"/>
+        <!-- Projector dust motes (static decorative dots) -->
+        <circle cx="680" cy="80"  r="1" fill="rgba(255,230,160,0.4)"/>
+        <circle cx="730" cy="120" r="1.2" fill="rgba(255,230,160,0.3)"/>
+        <circle cx="700" cy="200" r="0.8" fill="rgba(255,230,160,0.35)"/>
+        <circle cx="750" cy="260" r="1" fill="rgba(255,230,160,0.25)"/>
+        <circle cx="710" cy="340" r="0.9" fill="rgba(255,230,160,0.2)"/>
+
+        <!-- Screen ambient glow on ceiling -->
+        <ellipse cx="720" cy="260" rx="480" ry="80" fill="rgba(220,200,155,0.06)"/>
+
+        <!-- Vignette overlay -->
+        <rect x="0" y="0" width="1440" height="900" fill="url(#cinVig)"/>
+
+        <!-- Audience silhouettes — foreground heads -->
+        <g fill="#000000">
+          <!-- Far left -->
+          <ellipse cx="155" cy="808" rx="58" ry="70"/>
+          <path d="M 60,900 Q 62,840 155,812 Q 248,840 250,900 Z"/>
+          <!-- Left of center -->
+          <ellipse cx="430" cy="818" rx="50" ry="60"/>
+          <path d="M 345,900 Q 347,845 430,820 Q 513,845 515,900 Z"/>
+          <!-- Right of center -->
+          <ellipse cx="1010" cy="818" rx="50" ry="60"/>
+          <path d="M 925,900 Q 927,845 1010,820 Q 1093,845 1095,900 Z"/>
+          <!-- Far right -->
+          <ellipse cx="1285" cy="808" rx="58" ry="70"/>
+          <path d="M 1190,900 Q 1192,840 1285,812 Q 1378,840 1380,900 Z"/>
+        </g>
+      </svg>
+
+      <!-- Cinema screen -->
+      <div class="cinema-screen-wrap">
+        <div class="cinema-screen" id="cinScreen">
+          <!-- Curtains (decorative) -->
+          <div class="curtain curtain-l"></div>
+          <div class="curtain curtain-r"></div>
+          <!-- Screen content -->
+          <div class="screen-title-card" id="cinTitleCard">
+            <p class="cin-eyebrow">now showing</p>
+            <h2 class="cin-title">my favourite<br>photos of you</h2>
+            <p class="cin-sub">click anywhere to begin</p>
+          </div>
+          <div class="screen-photo-card" id="cinPhotoCard">
+            <img id="cinPhotoBg" class="cin-photo-bg" src="" alt="" aria-hidden="true"/>
+            <img id="cinPhoto" class="cin-photo-fg" src="" alt=""/>
+          </div>
+          <div class="screen-intermission" id="cinIntermission">
+            <div class="intermission-inner">
+              <div class="film-counter" id="cinCounter">01 / 06</div>
+              <div class="intermission-bars" id="cinBars">
+                <div class="ibar"></div><div class="ibar"></div><div class="ibar"></div>
+                <div class="ibar"></div><div class="ibar"></div><div class="ibar"></div>
+                <div class="ibar"></div><div class="ibar"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Film countdown canvas -->
+          <canvas id="cinCountdown" class="cin-countdown"></canvas>
+          <!-- Film burn transition canvas -->
+          <canvas id="cinBurn" class="cin-burn"></canvas>
+          <!-- Projector flicker overlay -->
+          <div class="screen-flicker"></div>
+          <!-- Film grain -->
+          <div class="screen-grain"></div>
+        </div>
+        <!-- Screen bezel/frame -->
+        <div class="screen-bezel"></div>
+      </div>
+
+      <!-- Cinema UI overlay -->
+      <div class="cinema-ui">
+        <p class="cinema-hint" id="cinHint">click anywhere to begin</p>
+      </div>
+    </div>
+
+    <!-- PAGE 7: LETTER -->
+    <div class="page" id="page-letter">
+      <div class="stats-wrap">
+        <p class="eyebrow stats-eyebrow">us, in numbers</p>
+        <h2 class="stats-heading">so far</h2>
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card" data-delay="0">
+            <div class="stat-num-wrap"><span class="stat-num" id="statSeconds">—</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">seconds together</span>
+          </div>
+          <div class="stat-card" data-delay="1">
+            <div class="stat-num-wrap"><span class="stat-num" id="statMinutes">—</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">minutes together</span>
+          </div>
+          <div class="stat-card" data-delay="2">
+            <div class="stat-num-wrap"><span class="stat-num" id="statHours">—</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">hours together</span>
+          </div>
+          <div class="stat-card" data-delay="3">
+            <div class="stat-num-wrap"><span class="stat-num" id="statDays">—</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">days together</span>
+          </div>
+          <div class="stat-card" data-delay="4">
+            <div class="stat-num-wrap"><span class="stat-num" id="statMonths">—</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">months together</span>
+          </div>
+          <div class="stat-card" data-delay="5">
+            <div class="stat-num-wrap"><span class="stat-num">12,326</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">lego pieces built together</span>
+          </div>
+          <div class="stat-card" data-delay="6">
+            <div class="stat-num-wrap"><span class="stat-num">476</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">photos of you on my phone</span>
+          </div>
+          <div class="stat-card" data-delay="7">
+            <div class="stat-num-wrap"><span class="stat-num">172</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">photos of us on my phone</span>
+          </div>
+          <div class="stat-card" data-delay="8">
+            <div class="stat-num-wrap"><span class="stat-num">141</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">km ran together</span>
+          </div>
+          <div class="stat-card" data-delay="9">
+            <div class="stat-num-wrap"><span class="stat-num">44</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">km around Ülemiste Järve</span>
+          </div>
+          <div class="stat-card" data-delay="10">
+            <div class="stat-num-wrap"><span class="stat-num">22</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">movies rated together</span>
+          </div>
+          <div class="stat-card" data-delay="11">
+            <div class="stat-num-wrap"><span class="stat-num">8</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">cinema visits together</span>
+          </div>
+          <div class="stat-card" data-delay="12">
+            <div class="stat-num-wrap"><span class="stat-num">3</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">words spoken in Italy</span>
+          </div>
+          <div class="stat-card" data-delay="13">
+            <div class="stat-num-wrap"><span class="stat-num">2</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">theatre visits endured</span>
+          </div>
+          <div class="stat-card" data-delay="14">
+            <div class="stat-num-wrap"><span class="stat-num">1</span></div>
+            <div class="stat-divider"></div>
+            <span class="stat-label">broken flowers given/received</span>
+          </div>
+          <div class="stat-card stat-card--wide" data-delay="15">
+            <div class="stat-num-wrap"><span class="stat-num">∞</span></div>
+            <span class="stat-label">moments still ahead</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE: ENDING -->
+    <div class="page" id="page-end">
+      <div class="ending-wrap">
+        <p class="ending-line-1" id="endingLine1">this is what happens when you leave me alone...</p>
+        <p class="ending-line-2" id="endingLine2">I truly love you so much.</p>
+      </div>
+    </div>
+
+  </div><!-- /pages -->
+
+  <!-- EASTER EGG OVERLAY -->
+  <div id="easterEgg" class="easter-egg hidden">
+    <div class="easter-egg-inner">
+      <p id="easterEggText"></p>
+      <button id="easterEggClose">close</button>
+    </div>
+  </div>
+
+  <!-- Curtain overlay (museum → cinema transition) -->
+  <div id="curtainOverlay" class="curtain-overlay">
+    <div class="co-left"></div>
+    <div class="co-right"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

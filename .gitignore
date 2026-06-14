@@ -1,0 +1,12 @@
+node_modules/
+*.zip
+Miina site*/
+Journey-*/
+.claude/
+convert*.js
+server.js
+package.json
+package-lock.json
+images/*.HEIC
+images/*.MOV
+images/*.mov
